@@ -1,4 +1,4 @@
-@keyframes change-text {
+/*@keyframes change-text {
   0% {
     content: 'സ്വാഗതം';
   }
@@ -53,4 +53,17 @@
 }
 .welcome {
   animation: change-text 6s;
+}*/
+
+.input {
+  width: 500px;
+  height: 30px;
+  margin: 50px 0;
+  padding: 5px;
+}
+
+@media only screen and (max-width: 768px) {
+  .input {
+    width: 100%;
+  }
 }

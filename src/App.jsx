@@ -9,7 +9,7 @@ const welcomes = [
   {lan: 'Kannada', text: 'ಸ್ವಾಗತ'},
   {lan: 'French', text: 'BIENVENU'},
   {lan: 'Spanish', text: 'BIENVENIDO'},
-  {lan: 'Portuguese', text: 'BEM-VINDO'},
+  {lan: 'Portugeese', text: 'BEM-VINDO'},
   {lan: 'Italian', text: 'BENVENUTO'},
   {lan: 'Russian', text: 'ДОБРО ПОЖАЛОВАТЬ'},
   {lan: 'Sweedish', text: 'VÄLKOMMEN'},
@@ -17,7 +17,7 @@ const welcomes = [
   {lan: 'Arabic', text: 'مرحباً'},
   {lan: 'Turkish', text: 'HOŞ GELDİN'},
   {lan: 'German', text: 'WILLKOMMEN'},
-  {lan: 'Dutch', text: 'VELKOMMEN'},
+  {lan: 'Danish', text: 'VELKOMMEN'},
   {lan: 'Greek', text: 'ΚΑΛΩΣ ΗΡΘΑΤΕ'},
   {lan: 'English', text: 'WELCOME'},
 ]
@@ -60,7 +60,7 @@ function App() {
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', height: '100%' }} >
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }} >
           <h2 style={{ color: '#000' }} >I can detect <a href="#languages" style={{ color: 'blue', textDecoration: 'underline', cursor: 'pointer' }} >17 languages</a></h2>
-          <input type="text" placeholder="Hi" value={content} onChange={(event) => {setContent(event.target.value)}} style={{ width: "400px", height: "30px", margin: '50px 0' }} />
+          <input className="input" type="text" placeholder="Hi" value={content} onChange={(event) => {setContent(event.target.value)}} />
           <button disabled={loading} onClick={getData} style={{ color: loading ? '#000' : '#FFF', backgroundColor: loading ? '#5F5F5F' : '#000' }} >Click me</button>
           <h1 style={{ color: '#000', textAlign: 'center' }} >{txt}</h1>
         </div>
