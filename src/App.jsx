@@ -24,7 +24,7 @@ const welcomes = [
 
 function App() {
   const [loading, setLoading] = useState(false);
-  const [content, setContent] = useState("Hi, I am svatru");
+  const [content, setContent] = useState("Hi");
   const [welcomesIndex, setWelcomesIndex] = useState(welcomes.length-1);
   const [txt, setTxt] = useState("English");
 
@@ -60,7 +60,7 @@ function App() {
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', height: '100%' }} >
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }} >
           <h2 style={{ color: '#000' }} >I can detect <a href="#languages" style={{ color: 'blue', textDecoration: 'underline', cursor: 'pointer' }} >17 languages</a></h2>
-          <input type="text" placeholder="Hi i am svatru" value={content} onChange={(event) => {setContent(event.target.value)}} style={{ width: "400px", height: "30px", margin: '50px 0' }} />
+          <input type="text" placeholder="Hi" value={content} onChange={(event) => {setContent(event.target.value)}} style={{ width: "400px", height: "30px", margin: '50px 0' }} />
           <button disabled={loading} onClick={getData} style={{ color: loading ? '#000' : '#FFF', backgroundColor: loading ? '#5F5F5F' : '#000' }} >Click me</button>
           <h1 style={{ color: '#000', textAlign: 'center' }} >{txt}</h1>
         </div>
