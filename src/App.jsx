@@ -48,8 +48,8 @@ function App() {
   };
 
   return (
-    <div style={{ width: '100%', height: '100vh' }} >
-      <nav style={{ width: '100%', height: '50px', position: 'fixed', top: 0, left: 0, display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '1rem', backgroundColor: 'wheat' }} >
+    <div style={{  height: '100vh', overflowX: 'hidden' }} >
+      <nav style={{ width: '100%', height: '50px', position: 'fixed', top: 0, left: 0, display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: 'wheat' }} >
         {/*<div style={{ width: '100px', display: 'flex', justifyContent: 'center', alignItems: 'center' }} >
           <motion.div initial={{ width: 0 }} animate={{ width: '100px' }} transition={{ duration: 0.5 }} style={{ overflow: 'hidden' }} >
             <h2 style={{ textAlign: 'center', color: '#000', }} >Svatru</h2>
@@ -65,35 +65,29 @@ function App() {
           <h1 style={{ color: '#000', textAlign: 'center' }} >{txt}</h1>
         </div>
       </div>
-      <footer id="languages" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', width: '100%',  }} >
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', width: '80%', padding: '1rem 0' }} >
-          <div  >
-            <ul>
-              {welcomes.slice(0, 6).map((item, i) => (
-                <li key={i.toString()} style={{ listStyle: 'none', textAlign: 'justify' }} >
-                  {item.lan}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <ul>
-              {welcomes.slice(6, 11).map((item, i) => (
-                <li key={i.toString()} style={{ listStyle: 'none', textAlign: 'justify' }} >
-                  {item.lan}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <ul>
-              {welcomes.slice(11, 17).map((item, i) => (
-                <li key={i.toString()} style={{ listStyle: 'none', textAlign: 'justify' }} >
-                  {item.lan}
-                </li>
-              ))}
-            </ul>
-          </div>
+      <footer id="languages" style={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', overflow: 'hidden', padding: '1rem 0', backgroundColor: '#000' }} >
+        <div style={{ width: '90%', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }} >
+          <ul style={{ display: 'flex', justifyContent: 'start', flexDirection: 'column', padding: 0, margin: 0 }} >
+            {welcomes.slice(0, 6).map((item, i) => (
+              <li key={i.toString()} style={{ listStyle: 'none', textAlign: 'start', padding: 0, margin: 0 }} >
+                {item.lan}
+              </li>
+            ))}
+          </ul>
+          <ul style={{ display: 'flex', justifyContent: 'start', flexDirection: 'column', padding: 0, margin: 0 }} >
+            {welcomes.slice(6, 11).map((item, i) => (
+              <li key={i.toString()} style={{ listStyle: 'none', textAlign: 'justify' }} >
+                {item.lan}
+              </li>
+            ))}
+          </ul>
+          <ul style={{ display: 'flex', justifyContent: 'start', flexDirection: 'column', padding: 0, margin: 0 }} >
+            {welcomes.slice(11, 17).map((item, i) => (
+              <li key={i.toString()} style={{ listStyle: 'none', textAlign: 'justify' }} >
+                {item.lan}
+              </li>
+            ))}
+          </ul>
         </div>
       </footer>
     </div>
