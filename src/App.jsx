@@ -30,7 +30,7 @@ function App() {
 
   const getData = async () => {
     setLoading(true)
-    await fetch(`http://rishav045.pythonanywhere.com/predict?text=${content}`, {
+    await fetch(`https://rishav045.pythonanywhere.com/predict?text=${content}`, {
       method: "POST",
       mode: "cors",
     }).then((res) => res.json())
