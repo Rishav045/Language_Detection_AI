@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import "./App.css";
-
+import { options } from "./utils/fetch";
 
 const welcomes = [
   {lan: 'Malayalam', text: 'സ്വാഗതം'},
@@ -26,7 +26,23 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [content, setContent] = useState("Hi");
   const [welcomesIndex, setWelcomesIndex] = useState(welcomes.length-1);
+  const [translated, setTranslated] = useState("");
   const [txt, setTxt] = useState("English");
+
+  const encodedParams = new URLSearchParams();
+encodedParams.append("q", content);
+encodedParams.append("target", "hi");
+encodedParams.append("source", "en");
+console.log(import.meta.env.VITE_RAPID_API_KEY);
+options['body']=encodedParams
+
+const translate = async()=>{
+  fetch('https://google-translate1.p.rapidapi.com/language/translate/v2', options)
+	.then(response => response.json())
+	.then(response => setTranslated(response.data.translations[0].translatedText))
+  
+	.catch(err => console.error(err));
+}
 
   const getData = async () => {
     setLoading(true)
@@ -63,6 +79,8 @@ function App() {
           <input className="input" type="text" placeholder="Hi" value={content} onChange={(event) => {setContent(event.target.value)}} />
           <button disabled={loading} onClick={getData} style={{ color: loading ? '#000' : '#FFF', backgroundColor: loading ? '#5F5F5F' : '#000' }} >Click me</button>
           <h1 style={{ color: '#000', textAlign: 'center' }} >{txt}</h1>
+          <button disabled={loading} onClick={translate} style={{ color: loading ? '#000' : '#FFF', backgroundColor: loading ? '#5F5F5F' : '#000' }} >Translate</button>
+          <h1 style={{ color: '#000', textAlign: 'center' }} >{translated}</h1>
         </div>
       </div>
       <footer id="languages" style={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', overflow: 'hidden', padding: '1rem 0', backgroundColor: '#000' }} >
