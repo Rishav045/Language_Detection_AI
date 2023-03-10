@@ -35,7 +35,7 @@ encodedParams.append("target", "hi");
 encodedParams.append("source", "en");
 console.log(import.meta.env.VITE_RAPID_API_KEY);
 options['body']=encodedParams
-
+console.log(options);
 const translate = async()=>{
   fetch('https://google-translate1.p.rapidapi.com/language/translate/v2', options)
 	.then(response => response.json())
